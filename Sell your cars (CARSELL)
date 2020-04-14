@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        int a;
+        cin>>a;
+        vector<int>v1;
+        for(int i=0;i<a;i++){
+            int value;
+            cin>>value;
+            v1.push_back(value);
+        }
+        sort(v1.begin(),v1.end(),greater<int>());
+        int s;
+        int t=0;
+        
+        for(int i=0;i<a;i++){
+            s=v1[i]-i;
+            if(s<0){
+                t=(t+0)%1000000007;
+            }
+            else{
+                t=(t+s)%1000000007;
+            }
+            
+        }
+        cout<<t%1000000007<<endl;
+    }
+}
